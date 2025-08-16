@@ -3,10 +3,10 @@ VPATH = ./basics
 CXXFLAGS = -Wall -g -Iinclude -std=c++14 -stdlib=libc++
 
 TARGET = max1 maxauto maxdecltype maxdecltypedecay maxcommon maxdefault1 maxdefault3 \
-		 max2
+		 max2 maxdefault4 max3val max3ref max4 maxconstexpr
 
 OBJS = 	max1.o maxauto.o maxdecltype.o maxdecltypedecay.o maxcommon.o maxdefault1.o maxdefault3.o \
-		max2.o
+		max2.o maxdefault4.o max3val.o max3ref.o max4.o maxconstexpr.o
 
 all: $(TARGET)
 
@@ -32,6 +32,21 @@ maxdefault3: maxdefault3.o
 	$(CXX) $(CXXFLAGS) $< -o $@
 
 max2: max2.o
+	$(CXX) $(CXXFLAGS) $< -o $@
+
+max3val: max3val.o
+	$(CXX) $(CXXFLAGS) $< -o $@
+
+maxdefault4: maxdefault4.o
+	$(CXX) $(CXXFLAGS) $< -o $@
+
+max3ref: max3ref.o
+	$(CXX) $(CXXFLAGS) $< -o $@
+
+max4: max4.o
+	$(CXX) $(CXXFLAGS) $< -o $@
+
+maxconstexpr: maxconstexpr.o
 	$(CXX) $(CXXFLAGS) $< -o $@
 
 %.o: %.cpp
