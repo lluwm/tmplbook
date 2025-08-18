@@ -9,13 +9,16 @@ CHAP2 = stack1test stack2test stackpartspectest stack3test
 
 CHAP3 = stacknontype
 
-TARGET =  $(CHAP1) $(CHAP2) $(CHAP3)
+CHAP4 = varprint1 varprint2
+
+TARGET =  $(CHAP1) $(CHAP2) $(CHAP3) $(CHAP4)
 
 all: $(TARGET)
 
 chap1: $(CHAP1)
 chap2: $(CHAP2)
 chap3: $(CHAP3)
+chap4: $(CHAP4)
 
 max1: max1.o
 	$(CXX) $(CXXFLAGS) $< -o $@
@@ -69,6 +72,12 @@ stack3test: stack3test.o
 	$(CXX) $(CXXFLAGS) $< -o $@
 
 stacknontype: stacknontype.o
+	$(CXX) $(CXXFLAGS) $< -o $@
+
+varprint1: varprint1.o
+	$(CXX) $(CXXFLAGS) $< -o $@
+
+varprint2: varprint2.o
 	$(CXX) $(CXXFLAGS) $< -o $@
 
 %.o: %.cpp
