@@ -11,7 +11,7 @@ CHAP3 = stacknontype
 
 CHAP4 = varprint1 varprint2
 
-CHAP5 = printcoll
+CHAP5 = printcoll stack5decl stack6decl
 
 TARGET =  $(CHAP1) $(CHAP2) $(CHAP3) $(CHAP4) $(CHAP5)
 
@@ -84,6 +84,12 @@ varprint2: varprint2.o
 	$(CXX) $(CXXFLAGS) $< -o $@
 
 printcoll: printcoll.o
+	$(CXX) $(CXXFLAGS) $< -o $@
+
+stack5decl: stack5decl.o
+	$(CXX) $(CXXFLAGS) $< -o $@
+
+stack6decl: stack6decl.o
 	$(CXX) $(CXXFLAGS) $< -o $@
 
 %.o: %.cpp
