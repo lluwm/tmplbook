@@ -11,7 +11,7 @@ CHAP3 = stacknontype
 
 CHAP4 = varprint1 varprint2
 
-CHAP5 = printcoll stack5decl stack6decl
+CHAP5 = printcoll stack5decl stack6decl stack7decl boolstring
 
 TARGET =  $(CHAP1) $(CHAP2) $(CHAP3) $(CHAP4) $(CHAP5)
 
@@ -90,6 +90,12 @@ stack5decl: stack5decl.o
 	$(CXX) $(CXXFLAGS) $< -o $@
 
 stack6decl: stack6decl.o
+	$(CXX) $(CXXFLAGS) $< -o $@
+
+stack7decl: stack7decl.o
+	$(CXX) $(CXXFLAGS) $< -o $@
+
+boolstring: boolstring.o
 	$(CXX) $(CXXFLAGS) $< -o $@
 
 %.o: %.cpp
